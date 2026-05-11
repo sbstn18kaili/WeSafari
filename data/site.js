@@ -178,4 +178,3 @@ export const activities = [
   'Coffee tour around Mount Kilimanjaro or Mount Meru',
   'Zanzibar spice tour, reef snorkeling, and Stone Town walk'
 ];
-

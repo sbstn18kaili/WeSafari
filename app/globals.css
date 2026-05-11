@@ -178,7 +178,10 @@ h3 { font-size: 1.35rem; }
 }
 .packageCard { overflow: hidden; }
 .packageCard img { height: 220px; object-fit: cover; width: 100%; }
+<<<<<<< HEAD
 .packageCard div, .featureGrid article { padding: 24px; }
+=======
+>>>>>>> 9ad8e3135319ab55076748bf82a75f35938e4e10
 .packageCard div, .destinationList article, .featureGrid article { padding: 24px; }
 .packageCard span { color: var(--brand); font-size: 0.82rem; font-weight: 900; text-transform: uppercase; }
 .packageCard p, .destinationList p, .featureGrid p, .pillList { color: var(--muted); }
@@ -263,6 +266,7 @@ textarea { resize: vertical; }
   .section { padding: 68px 20px; }
   .siteFooter { align-items: flex-start; flex-direction: column; }
 }
+<<<<<<< HEAD
 
 .sectionHeading.withAction {
   align-items: end;
@@ -368,3 +372,5 @@ textarea { resize: vertical; }
   .detailGrid .detailPanel:first-child { grid-column: auto; }
   .siteFooter { display: grid; }
 }
+=======
+>>>>>>> 9ad8e3135319ab55076748bf82a75f35938e4e10

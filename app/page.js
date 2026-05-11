@@ -1,13 +1,4 @@
 import Link from 'next/link';
-import DestinationCard from '@/components/DestinationCard';
-import ExperienceCard from '@/components/ExperienceCard';
-import SafariCard from '@/components/SafariCard';
-import { destinations, experiences, safariPackages } from '@/data/site';
-
-export default function HomePage() {
-  const featuredSafaris = safariPackages.slice(0, 4);
-  const featuredExperiences = experiences.slice(0, 3);
-
 import SafariCard from '@/components/SafariCard';
 import { activities, destinations, safariPackages } from '@/data/site';
 
@@ -27,7 +18,6 @@ export default function HomePage() {
               Start planning
             </Link>
             <Link className="button ghost" href="/safaris">
-              View all safaris
               Explore trips
             </Link>
           </div>
@@ -61,16 +51,6 @@ export default function HomePage() {
       </section>
 
       <section className="section featured">
-        <div className="sectionHeading withAction">
-          <div>
-            <p className="eyebrow">Popular Tanzania safari tours</p>
-            <h2>Choose a sample itinerary, then make it yours.</h2>
-            <p>Use these journeys as starting points. We can adjust length, lodges, routing, pace, and optional experiences.</p>
-          </div>
-          <Link className="button secondary" href="/safaris">View all safaris</Link>
-        </div>
-        <div className="packageGrid">
-          {featuredSafaris.map((safari) => (
         <div className="sectionHeading">
           <p className="eyebrow">Popular Tanzania safari tours</p>
           <h2>Choose a sample itinerary, then make it yours.</h2>
@@ -90,7 +70,6 @@ export default function HomePage() {
         </div>
         <div className="destinationList">
           {destinations.slice(0, 3).map((destination) => (
-            <DestinationCard key={destination.name} destination={destination} />
             <article key={destination.name}>
               <h3>{destination.name}</h3>
               <p>{destination.description}</p>
@@ -102,19 +81,6 @@ export default function HomePage() {
         </Link>
       </section>
 
-      <section className="section experiencesPreview">
-        <div className="sectionHeading withAction">
-          <div>
-            <p className="eyebrow">Optional experiences</p>
-            <h2>Add more texture to your safari.</h2>
-            <p>Each experience can be added to a private safari when routing, timing, and park rules allow.</p>
-          </div>
-          <Link className="button secondary" href="/experiences">View all experiences</Link>
-        </div>
-        <div className="experienceGrid">
-          {featuredExperiences.map((experience) => (
-            <ExperienceCard key={experience.slug} experience={experience} />
-          ))}
       <section className="section split">
         <div className="imagePanel" />
         <div className="contentPanel">

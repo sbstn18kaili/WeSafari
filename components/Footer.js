@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { navLinks, quickLinks } from '@/data/site';
 
 export default function Footer() {
   return (

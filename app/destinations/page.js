@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import DestinationCard from '@/components/DestinationCard';
 import PageHero from '@/components/PageHero';
 import { destinations } from '@/data/site';
 
@@ -20,6 +21,7 @@ export default function DestinationsPage() {
       <section className="section destinationsFull">
         <div className="destinationList">
           {destinations.map((destination) => (
+            <DestinationCard key={destination.name} destination={destination} />
             <article key={destination.name}>
               <h3>{destination.name}</h3>
               <p>{destination.description}</p>

@@ -12,6 +12,11 @@ export default function SafarisPage() {
   return (
     <main>
       <PageHero
+        eyebrow="All safari packages"
+        title="Private Tanzania routes for every travel style."
+        image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
+      >
+        Browse more safari ideas, then customize parks, lodges, pace, and special experiences with our Arusha-based team.
         eyebrow="Safari packages"
         title="Private Tanzania routes for every travel style."
         image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"

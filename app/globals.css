@@ -178,7 +178,6 @@ h3 { font-size: 1.35rem; }
 }
 .packageCard { overflow: hidden; }
 .packageCard img { height: 220px; object-fit: cover; width: 100%; }
-.packageCard div, .featureGrid article { padding: 24px; }
 .packageCard div, .destinationList article, .featureGrid article { padding: 24px; }
 .packageCard span { color: var(--brand); font-size: 0.82rem; font-weight: 900; text-transform: uppercase; }
 .packageCard p, .destinationList p, .featureGrid p, .pillList { color: var(--muted); }
@@ -262,109 +261,4 @@ textarea { resize: vertical; }
   .trustBar article { border-bottom: 1px solid rgba(255,255,255,0.16); border-right: 0; }
   .section { padding: 68px 20px; }
   .siteFooter { align-items: flex-start; flex-direction: column; }
-}
-
-.sectionHeading.withAction {
-  align-items: end;
-  display: flex;
-  gap: 24px;
-  justify-content: space-between;
-  max-width: none;
-}
-.sectionHeading.withAction > div { max-width: 760px; }
-.sectionHeading.withAction .button { flex: 0 0 auto; margin: 0; }
-
-.destinationCard, .experienceCard, .detailPanel, .itineraryPanel {
-  background: var(--white);
-  border: 1px solid rgba(128, 49, 14, 0.1);
-  border-radius: 24px;
-  box-shadow: 0 12px 42px rgba(36, 24, 14, 0.07);
-  overflow: hidden;
-}
-.destinationCard img, .experienceCard img {
-  height: 220px;
-  object-fit: cover;
-  width: 100%;
-}
-.destinationCard div, .experienceCard div { padding: 24px; }
-.experienceGrid {
-  display: grid;
-  gap: 22px;
-  grid-template-columns: repeat(3, 1fr);
-}
-.experienceGrid.full { grid-template-columns: repeat(3, 1fr); }
-.experiencesPreview, .experiencesFull { background: var(--cream); border-radius: 36px; }
-.experienceCard p, .detailPanel p, .timeline p { color: var(--muted); }
-
-.detailGrid {
-  align-items: stretch;
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1.35fr 0.65fr;
-}
-.detailPanel { padding: 34px; }
-.accentPanel {
-  background: var(--forest);
-  color: var(--white);
-}
-.accentPanel .pillList li { background: rgba(255, 255, 255, 0.1); color: var(--white); }
-.accentPanel .button { margin-top: 18px; }
-.detailMeta {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 28px;
-}
-.detailMeta span {
-  background: var(--cream);
-  border-radius: 18px;
-  color: var(--muted);
-  display: grid;
-  gap: 4px;
-  padding: 16px;
-}
-.detailMeta strong { color: var(--ink); }
-.pillList.stacked { display: grid; }
-.itineraryPanel { padding: 42px; }
-.timeline {
-  counter-reset: safari-days;
-  display: grid;
-  gap: 16px;
-  list-style: none;
-  margin: 28px 0 0;
-  padding: 0;
-}
-.timeline li {
-  border-left: 4px solid var(--gold);
-  padding: 6px 0 6px 18px;
-}
-.timeline span {
-  color: var(--brand-dark);
-  font-weight: 900;
-  text-transform: uppercase;
-}
-.footerBrandBlock { max-width: 330px; }
-.footerColumn h3 {
-  color: var(--gold);
-  font-size: 1rem;
-  margin: 0 0 12px;
-}
-.footerColumn .footerLinks {
-  align-items: flex-start;
-  display: grid;
-  gap: 8px;
-}
-.quickLinks { min-width: 220px; }
-
-@media (max-width: 980px) {
-  .experienceGrid, .experienceGrid.full, .detailGrid { grid-template-columns: 1fr 1fr; }
-  .detailGrid .detailPanel:first-child { grid-column: 1 / -1; }
-  .detailMeta { grid-template-columns: 1fr; }
-  .sectionHeading.withAction { align-items: flex-start; flex-direction: column; }
-}
-
-@media (max-width: 760px) {
-  .experienceGrid, .experienceGrid.full, .detailGrid { grid-template-columns: 1fr; }
-  .detailGrid .detailPanel:first-child { grid-column: auto; }
-  .siteFooter { display: grid; }
 }

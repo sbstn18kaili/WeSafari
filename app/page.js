@@ -8,6 +8,10 @@ export default function HomePage() {
   const featuredSafaris = safariPackages.slice(0, 4);
   const featuredExperiences = experiences.slice(0, 3);
 
+import SafariCard from '@/components/SafariCard';
+import { activities, destinations, safariPackages } from '@/data/site';
+
+export default function HomePage() {
   return (
     <main>
       <section className="homeHero">
@@ -24,6 +28,7 @@ export default function HomePage() {
             </Link>
             <Link className="button ghost" href="/safaris">
               View all safaris
+              Explore trips
             </Link>
           </div>
         </div>
@@ -66,6 +71,13 @@ export default function HomePage() {
         </div>
         <div className="packageGrid">
           {featuredSafaris.map((safari) => (
+        <div className="sectionHeading">
+          <p className="eyebrow">Popular Tanzania safari tours</p>
+          <h2>Choose a sample itinerary, then make it yours.</h2>
+          <p>Use these journeys as starting points. We can adjust length, lodges, routing, pace, and optional experiences.</p>
+        </div>
+        <div className="packageGrid">
+          {safariPackages.map((safari) => (
             <SafariCard key={safari.title} safari={safari} />
           ))}
         </div>
@@ -79,6 +91,10 @@ export default function HomePage() {
         <div className="destinationList">
           {destinations.slice(0, 3).map((destination) => (
             <DestinationCard key={destination.name} destination={destination} />
+            <article key={destination.name}>
+              <h3>{destination.name}</h3>
+              <p>{destination.description}</p>
+            </article>
           ))}
         </div>
         <Link className="button secondary" href="/destinations">
@@ -99,6 +115,16 @@ export default function HomePage() {
           {featuredExperiences.map((experience) => (
             <ExperienceCard key={experience.slug} experience={experience} />
           ))}
+      <section className="section split">
+        <div className="imagePanel" />
+        <div className="contentPanel">
+          <p className="eyebrow">Optional experiences</p>
+          <h2>Add more texture to your safari.</h2>
+          <ul className="activityList">
+            {activities.slice(0, 6).map((activity) => (
+              <li key={activity}>{activity}</li>
+            ))}
+          </ul>
         </div>
       </section>
     </main>

@@ -179,6 +179,7 @@ h3 { font-size: 1.35rem; }
 .packageCard { overflow: hidden; }
 .packageCard img { height: 220px; object-fit: cover; width: 100%; }
 .packageCard div, .featureGrid article { padding: 24px; }
+.packageCard div, .destinationList article, .featureGrid article { padding: 24px; }
 .packageCard span { color: var(--brand); font-size: 0.82rem; font-weight: 900; text-transform: uppercase; }
 .packageCard p, .destinationList p, .featureGrid p, .pillList { color: var(--muted); }
 .textLink { color: var(--brand-dark); font-weight: 900; text-decoration: none; }

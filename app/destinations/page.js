@@ -22,6 +22,11 @@ export default function DestinationsPage() {
         <div className="destinationList">
           {destinations.map((destination) => (
             <DestinationCard key={destination.name} destination={destination} />
+            <article key={destination.name}>
+              <h3>{destination.name}</h3>
+              <p>{destination.description}</p>
+              <strong>Best for: {destination.bestFor}</strong>
+            </article>
           ))}
         </div>
       </section>

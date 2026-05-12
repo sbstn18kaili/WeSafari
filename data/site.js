@@ -371,42 +371,101 @@ export const safariDetails = {
 
 export const destinations = [
   {
+    slug: 'serengeti-national-park',
     name: 'Serengeti National Park',
-    image: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80',
     description: 'Endless plains, kopjes, big cats, and seasonal migration drama across one of Africa’s most famous ecosystems.',
-    bestFor: 'Migration, lions, cheetahs, photography'
+    overview:
+      'The Serengeti is Tanzania’s most iconic safari destination, known for vast horizons, predator-rich plains, granite kopjes, and the seasonal movement of wildebeest and zebra. It rewards both first-time travelers and serious wildlife photographers with time, patience, and flexible routing.',
+    bestFor: 'Migration, lions, cheetahs, photography',
+    region: 'Northern Tanzania',
+    bestTime: 'Year-round, with June to October for dry-season viewing and December to March for southern Serengeti/Ndutu calving.',
+    wildlife: ['Lions', 'Cheetahs', 'Leopards', 'Wildebeest', 'Zebras', 'Elephants', 'Hyenas'],
+    experiences: ['Game drives', 'Hot-air balloon safari', 'Migration tracking', 'Photography-focused private guiding'],
+    suggestedSafaris: ['great-migration-explorer', 'serengeti-big-cats-and-crater', 'photographers-serengeti-safari'],
+    travelNotes: ['Best with at least two to four nights', 'Seasonal camp location matters', 'Fly-in options can reduce long road transfers']
   },
   {
+    slug: 'ngorongoro-crater',
     name: 'Ngorongoro Crater',
-    image: 'https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=1200&q=80',
     description: 'A wildlife-rich volcanic caldera where travelers can see a remarkable variety of animals in a compact day.',
-    bestFor: 'Big Five chances, scenery, short stays'
+    overview:
+      'Ngorongoro Crater offers one of the most dramatic safari settings in East Africa. The descent from the rim opens into a natural amphitheater of grassland, forest, marsh, and soda lake habitats where wildlife concentrates in a relatively small area.',
+    bestFor: 'Big Five chances, scenery, short stays',
+    region: 'Northern Tanzania',
+    bestTime: 'Excellent throughout the year; dry months are popular, while green months bring softer landscapes.',
+    wildlife: ['Lions', 'Black rhinos', 'Buffalo', 'Hippos', 'Flamingos', 'Wildebeest', 'Zebras'],
+    experiences: ['Crater floor game drive', 'Highland lodge stays', 'Photography viewpoints', 'Cultural stops nearby'],
+    suggestedSafaris: ['best-of-northern-tanzania', 'serengeti-big-cats-and-crater', 'honeymoon-under-canvas'],
+    travelNotes: ['Crater permits are time-sensitive', 'Early starts improve the experience', 'Works well before or after Serengeti']
   },
   {
+    slug: 'tarangire-national-park',
     name: 'Tarangire National Park',
-    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
     description: 'Ancient baobabs, dry-season elephant herds, river valleys, and quieter game drives on the northern circuit.',
-    bestFor: 'Elephants, baobabs, birdlife'
+    overview:
+      'Tarangire is loved for elephant herds, sculptural baobabs, and a quieter atmosphere than the busiest northern parks. During the dry season, wildlife gathers around the Tarangire River, creating rewarding game drives and classic Tanzania scenery.',
+    bestFor: 'Elephants, baobabs, birdlife',
+    region: 'Northern Tanzania',
+    bestTime: 'June to October is strongest for elephant concentrations; November to May is green and excellent for birds.',
+    wildlife: ['Elephants', 'Giraffes', 'Lions', 'Zebras', 'Wildebeest', 'Kudus', 'Birdlife'],
+    experiences: ['Private game drives', 'Baobab landscapes', 'Birdwatching', 'Family-friendly safari days'],
+    suggestedSafaris: ['best-of-northern-tanzania', 'family-safari-adventure', 'safari-and-zanzibar-escape'],
+    travelNotes: ['Great first safari stop from Arusha', 'Pairs easily with Karatu and Ngorongoro', 'Some lodges offer strong wilderness character']
   },
   {
+    slug: 'lake-manyara-national-park',
     name: 'Lake Manyara National Park',
-    image: 'https://images.unsplash.com/photo-1504432842672-1a79f78e4084?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1504432842672-1a79f78e4084?auto=format&fit=crop&w=1200&q=80',
     description: 'Forest, escarpment views, monkeys, flamingos, and a gentle first or final safari day near Arusha.',
-    bestFor: 'Compact drives, scenery, families'
+    overview:
+      'Lake Manyara is a compact park set below the Rift Valley escarpment. Its groundwater forest, lake views, monkeys, birds, and easy access make it a useful addition for travelers who want variety without a long detour.',
+    bestFor: 'Compact drives, scenery, families',
+    region: 'Northern Tanzania',
+    bestTime: 'Good year-round, especially as a soft start or finish to a northern circuit safari.',
+    wildlife: ['Baboons', 'Blue monkeys', 'Elephants', 'Giraffes', 'Flamingos', 'Hippos', 'Birdlife'],
+    experiences: ['Short game drives', 'Mto wa Mbu village visit', 'Market walks', 'Canoeing when available'],
+    suggestedSafaris: ['best-of-northern-tanzania', 'family-safari-adventure', 'great-migration-explorer'],
+    travelNotes: ['Works well with Karatu overnights', 'Excellent for cultural add-ons', 'Water levels and wildlife movement vary by season']
   },
   {
+    slug: 'kilimanjaro-region',
     name: 'Kilimanjaro Region',
-    image: 'https://images.unsplash.com/photo-1521150932951-303a95503ed3?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1521150932951-303a95503ed3?auto=format&fit=crop&w=1200&q=80',
     description: 'Waterfalls, coffee farms, day hikes, and communities on the slopes of Africa’s highest mountain.',
-    bestFor: 'Culture, day hikes, coffee tours'
+    overview:
+      'The Kilimanjaro region adds mountain air, Chagga culture, waterfalls, coffee farms, and optional day hikes to a Tanzania itinerary. It is ideal before or after safari for travelers who want active time without committing to a full summit climb.',
+    bestFor: 'Culture, day hikes, coffee tours',
+    region: 'Northeastern Tanzania',
+    bestTime: 'Clearer mountain views are common from June to October and January to February, though day trips run most of the year.',
+    wildlife: ['Colobus monkeys', 'Forest birds', 'Small forest mammals'],
+    experiences: ['Coffee tours', 'Waterfall walks', 'Village visits', 'Kilimanjaro day hikes'],
+    suggestedSafaris: ['family-safari-adventure', 'honeymoon-under-canvas', 'best-of-northern-tanzania'],
+    travelNotes: ['Great arrival-day buffer near Kilimanjaro airport', 'Bring comfortable walking shoes', 'Weather changes quickly in mountain foothills']
   },
   {
+    slug: 'zanzibar',
     name: 'Zanzibar',
-    image: 'https://images.unsplash.com/photo-1589394760151-b4c9890765fe?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1589394760151-b4c9890765fe?auto=format&fit=crop&w=1200&q=80',
     description: 'White-sand beaches, reefs, spice farms, dhow cruises, Stone Town history, and Swahili coastal culture.',
-    bestFor: 'Beach extensions, honeymoons, snorkeling'
+    overview:
+      'Zanzibar is the classic way to slow down after a safari. Beach resorts, reef snorkeling, spice farms, Stone Town history, and Swahili coastal culture create an easy bush-to-beach finish for couples, families, and honeymooners.',
+    bestFor: 'Beach extensions, honeymoons, snorkeling',
+    region: 'Indian Ocean coast',
+    bestTime: 'June to October and December to March are most popular for beach weather; April and May are typically wetter.',
+    wildlife: ['Reef fish', 'Dolphins in some areas', 'Colobus monkeys in Jozani Forest', 'Marine life'],
+    experiences: ['Stone Town walk', 'Spice farm tour', 'Snorkeling or diving', 'Sunset dhow cruise', 'Beach relaxation'],
+    suggestedSafaris: ['safari-and-zanzibar-escape', 'honeymoon-under-canvas', 'great-migration-explorer'],
+    travelNotes: ['Domestic flights connect from Arusha or Serengeti', 'Beach choice affects tide and swimming style', 'Modest clothing is recommended in Stone Town']
   }
 ];
+
+export function findDestination(slug) {
+  return destinations.find((destination) => destination.slug === slug);
+}
+
 
 export const experiences = [
   {

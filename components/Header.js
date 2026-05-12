@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { navLinks } from '@/data/site';
+import { destinations, navLinks } from '@/data/site';
 
 export default function Header() {
   return (
@@ -13,9 +13,24 @@ export default function Header() {
       </Link>
       <nav aria-label="Primary navigation" className="navLinks">
         {navLinks.map((link) => (
-          <Link key={link.href} href={link.href}>
-            {link.label}
-          </Link>
+          link.href === '/destinations' ? (
+            <div className="navDropdown" key={link.href}>
+              <Link className="dropdownTrigger" href={link.href}>
+                {link.label}
+              </Link>
+              <div className="dropdownMenu" aria-label="Destination pages">
+                {destinations.map((destination) => (
+                  <Link key={destination.slug} href={`/destinations/${destination.slug}`}>
+                    {destination.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
+          )
         ))}
         <Link className="navCta" href="/contact">
           Plan my trip

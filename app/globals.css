@@ -81,7 +81,7 @@ img { display: block; max-width: 100%; }
   position: relative;
 }
 .homeHero {
-  align-items: end;
+  align-items: flex-end;
   background:
     linear-gradient(90deg, rgba(30, 18, 9, 0.86), rgba(38, 22, 9, 0.58), rgba(38, 22, 9, 0.18)),
     url("https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1800&q=80") center/cover;
@@ -264,7 +264,7 @@ textarea { resize: vertical; }
 }
 
 .sectionHeading.withAction {
-  align-items: end;
+  align-items: flex-end;
   display: flex;
   gap: 24px;
   justify-content: space-between;
@@ -457,4 +457,85 @@ textarea { resize: vertical; }
 
 @media (max-width: 760px) {
   .essentialsGrid, .safariMeta { grid-template-columns: 1fr; }
+}
+
+.navDropdown {
+  display: inline-flex;
+  position: relative;
+}
+.dropdownTrigger::after {
+  content: " ▾";
+  font-size: 0.75rem;
+}
+.dropdownMenu {
+  background: rgba(30, 22, 15, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 6px;
+  left: 50%;
+  min-width: 260px;
+  opacity: 0;
+  padding: 14px;
+  pointer-events: none;
+  position: absolute;
+  top: calc(100% + 14px);
+  transform: translate(-50%, 8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 40;
+}
+.dropdownMenu a {
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.dropdownMenu a:hover,
+.dropdownMenu a:focus-visible {
+  background: rgba(244, 176, 60, 0.16);
+  color: var(--gold);
+}
+.navDropdown:hover .dropdownMenu,
+.navDropdown:focus-within .dropdownMenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+.destinationCard .textLink {
+  display: inline-flex;
+  margin-top: 14px;
+}
+.destinationDetailGrid { align-items: stretch; }
+.destinationInfoGrid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 980px) {
+  .dropdownMenu {
+    left: 0;
+    transform: translate(0, 8px);
+  }
+  .navDropdown:hover .dropdownMenu,
+  .navDropdown:focus-within .dropdownMenu {
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 760px) {
+  .navDropdown {
+    display: grid;
+    width: 100%;
+  }
+  .dropdownMenu {
+    background: rgba(255,255,255,0.08);
+    box-shadow: none;
+    left: auto;
+    margin-top: 8px;
+    opacity: 1;
+    pointer-events: auto;
+    position: static;
+    transform: none;
+  }
+  .destinationInfoGrid { grid-template-columns: 1fr; }
 }

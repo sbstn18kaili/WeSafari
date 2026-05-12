@@ -30,21 +30,35 @@ export default async function SafariDetailPage({ params }) {
     notFound();
   }
 
+  const essentials = [
+    { label: 'Duration', value: safari.duration },
+    { label: 'Travel style', value: safari.style },
+    { label: 'Best for', value: safari.bestFor },
+    { label: 'Route', value: safari.route },
+    { label: 'Starts / ends', value: safari.startsEnds },
+    { label: 'Accommodation', value: safari.accommodation },
+    { label: 'Group size', value: safari.groupSize },
+    { label: 'Best time', value: safari.bestTime },
+    { label: 'Pace', value: safari.pace },
+    { label: 'Physical level', value: safari.physicalLevel }
+  ];
+
   return (
     <main>
       <PageHero eyebrow={`${safari.duration} • ${safari.style}`} title={safari.title} image={safari.image}>
         {safari.summary}
       </PageHero>
 
-      <section className="section detailGrid">
+      <section className="section detailGrid safariOverviewGrid">
         <article className="detailPanel">
           <p className="eyebrow">Safari overview</p>
           <h2>What to expect</h2>
           <p>{safari.overview}</p>
-          <div className="detailMeta">
-            <span><strong>Duration</strong>{safari.duration}</span>
-            <span><strong>Travel style</strong>{safari.style}</span>
-            <span><strong>Best for</strong>{safari.bestFor}</span>
+          <p>{safari.priceNote}</p>
+          <div className="detailMeta safariMeta">
+            {essentials.slice(0, 3).map((item) => (
+              <span key={item.label}><strong>{item.label}</strong>{item.value}</span>
+            ))}
           </div>
         </article>
         <aside className="detailPanel accentPanel">
@@ -58,17 +72,65 @@ export default async function SafariDetailPage({ params }) {
         </aside>
       </section>
 
-      <section className="section itineraryPanel">
+      <section className="section safariDetailsPanel">
+        <div className="sectionHeading compact">
+          <p className="eyebrow">Trip essentials</p>
+          <h2>Everything you need to know before you enquire.</h2>
+        </div>
+        <div className="essentialsGrid">
+          {essentials.map((item) => (
+            <article key={item.label}>
+              <strong>{item.label}</strong>
+              <p>{item.value}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section itineraryPanel detailedItinerary">
         <p className="eyebrow">Suggested itinerary</p>
-        <h2>A flexible day-by-day idea.</h2>
-        <ol className="timeline">
-          {safari.itinerary.map((day, index) => (
-            <li key={day}>
-              <span>Day {index + 1}</span>
-              <p>{day}</p>
+        <h2>A flexible day-by-day plan.</h2>
+        <ol className="timeline expandedTimeline">
+          {safari.itineraryDetailed.map((day) => (
+            <li key={`${day.day}-${day.title}`}>
+              <span>Day {day.day}</span>
+              <h3>{day.title}</h3>
+              <p>{day.description}</p>
+              <dl>
+                <div><dt>Location</dt><dd>{day.location}</dd></div>
+                <div><dt>Accommodation</dt><dd>{day.accommodation}</dd></div>
+                <div><dt>Meals</dt><dd>{day.meals}</dd></div>
+              </dl>
             </li>
           ))}
         </ol>
+      </section>
+
+      <section className="section inclusionsGrid">
+        <article className="detailPanel">
+          <p className="eyebrow">Included</p>
+          <h2>What is covered</h2>
+          <ul className="checkList">
+            {safari.included.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+        <article className="detailPanel">
+          <p className="eyebrow">Excluded</p>
+          <h2>What to budget separately</h2>
+          <ul className="checkList mutedList">
+            {safari.excluded.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+        <article className="detailPanel accentPanel bookingPanel">
+          <p className="eyebrow">Meals and planning</p>
+          <h2>Built around your comfort.</h2>
+          <p>{safari.meals}</p>
+          <Link className="button primary" href="/contact">Request a quote</Link>
+        </article>
       </section>
 
       <section className="section experiencesPreview">

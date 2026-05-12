@@ -1,10 +1,8 @@
 import Link from 'next/link';
-import React from 'react';
 import DestinationCard from '@/components/DestinationCard';
 import ExperienceCard from '@/components/ExperienceCard';
 import SafariCard from '@/components/SafariCard';
-import { activities, destinations, experiences, safariPackages } from '@/data/site';
-
+import { destinations, experiences, safariPackages } from '@/data/site';
 
 export default function HomePage() {
   const featuredSafaris = safariPackages.slice(0, 4);
@@ -25,7 +23,7 @@ export default function HomePage() {
               Start planning
             </Link>
             <Link className="button ghost" href="/safaris">
-              Explore Trips
+              View all safaris
             </Link>
           </div>
         </div>
@@ -62,14 +60,9 @@ export default function HomePage() {
           <div>
             <p className="eyebrow">Popular Tanzania safari tours</p>
             <h2>Choose a sample itinerary, then make it yours.</h2>
-            <p>
-              Use these journeys as starting points. We can adjust length, lodges, routing,
-              pace, and optional experiences.
-            </p>
+            <p>Use these journeys as starting points. We can adjust length, lodges, routing, pace, and optional experiences.</p>
           </div>
-          <Link className="button secondary" href="/safaris">
-            View all safaris
-          </Link>
+          <Link className="button secondary" href="/safaris">View all safaris</Link>
         </div>
         <div className="packageGrid">
           {featuredSafaris.map((safari) => (
@@ -85,12 +78,7 @@ export default function HomePage() {
         </div>
         <div className="destinationList">
           {destinations.slice(0, 3).map((destination) => (
-            <React.Fragment key={destination.name}>
-              <article>
-                <h3>{destination.name}</h3>
-                <p>{destination.description}</p>
-              </article>
-            </React.Fragment>
+            <DestinationCard key={destination.name} destination={destination} />
           ))}
         </div>
         <Link className="button secondary" href="/destinations">
@@ -113,9 +101,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      
     </main>
   );
 }
-

@@ -1,9 +1,7 @@
 import Link from 'next/link';
-import React from 'react';
 import DestinationCard from '@/components/DestinationCard';
 import PageHero from '@/components/PageHero';
 import { destinations } from '@/data/site';
-
 
 export const metadata = {
   title: 'Destinations',
@@ -23,13 +21,7 @@ export default function DestinationsPage() {
       <section className="section destinationsFull">
         <div className="destinationList">
           {destinations.map((destination) => (
-            <React.Fragment key={destination.name}>
-              <article>
-                <h3>{destination.name}</h3>
-                <p>{destination.description}</p>
-                <strong>Best for: {destination.bestFor}</strong>
-              </article>
-            </React.Fragment>
+            <DestinationCard key={destination.name} destination={destination} />
           ))}
         </div>
       </section>

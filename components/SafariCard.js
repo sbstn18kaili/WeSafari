@@ -17,11 +17,9 @@ export default function SafariCard({ safari, detailed = false }) {
             ))}
           </ul>
         )}
-        {!detailed && (
-          <Link className="textLink" href="/safaris">
-            View itinerary ideas →
-          </Link>
-        )}
+        <Link className="textLink" href={`/safaris/${safari.slug}`}>
+          View safari details →
+        </Link>
       </div>
     </article>
   );
